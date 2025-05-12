@@ -22,7 +22,11 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.bikmaev = import ./home-manager.nix;
+          home-manager.users.bikmaev = { pkgs, ... }: {
+            home.stateVersion = "23.11";
+            home.homeDirectory = "/Users/bikmaev";
+            imports = [ ./home-manager.nix ];
+          };
         }
       ];
     };
