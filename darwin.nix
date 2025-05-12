@@ -13,6 +13,7 @@
     # function keys behavior
     NSGlobalDomain = {
       "com.apple.keyboard.fnState" = true; # make F keys be F keys
+      "com.apple.keyboardlayout.all" = [ "ru" "en" ];
       AppleKeyboardUIMode = 3;
       InitialKeyRepeat = 15;
       KeyRepeat = 2;
@@ -22,11 +23,6 @@
       NSAutomaticQuoteSubstitutionEnabled = false;
       NSAutomaticDashSubstitutionEnabled = false;
       ApplePressAndHoldEnabled = false;
-    };
-
-    # input sources
-    ".GlobalPreferences" = {
-      "com.apple.keyboardlayout.all" = [ "ru" "en" ];
     };
 
     dock = {
