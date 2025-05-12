@@ -5,7 +5,7 @@
   # keyboard settings
   system.keyboard = {
     enableKeyMapping = true;
-    remapCapsLockToControl = false; # disable caps lock completely
+    remapCapsLockToControl = true;
     nonUS.remapTilde = false;
   };
 
@@ -21,11 +21,22 @@
       NSAutomaticPeriodSubstitutionEnabled = false;
       NSAutomaticQuoteSubstitutionEnabled = false;
       NSAutomaticDashSubstitutionEnabled = false;
+      ApplePressAndHoldEnabled = false;
     };
 
     # input sources
     .GlobalPreferences = {
       "com.apple.keyboardlayout.all" = [ "ru" "en" ];
+    };
+
+    dock = {
+      autohide = true;
+      show-recents = false;
+    };
+
+    finder = {
+      AppleShowAllExtensions = true;
+      _FXShowPosixPathInTitle = true;
     };
   };
 
