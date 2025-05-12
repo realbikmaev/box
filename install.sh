@@ -1,14 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-REPO_PATH="$HOME/.config/nixpkgs"
+REPO_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 echo "==> checking prerequisites..."
-if [ ! -d "$REPO_PATH" ]; then
-    echo "==> cloning box..."
-    git clone https://github.com/realbikmaev/box.git/ "$REPO_PATH"
-fi
-
 if ! command -v nix &>/dev/null; then
     echo "==> installing nix..."
     curl -L https://nixos.org/nix/install | sh -s -- --daemon

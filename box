@@ -9,16 +9,6 @@ log() {
     echo -e "${GREEN}==>${NC} $1"
 }
 
-# clone or update repo
-REPO_PATH="$HOME/.config/nixpkgs"
-if [[ ! -d "$REPO_PATH" ]]; then
-    log "cloning box..."
-    git clone https://github.com/realbikmaev/box.git/ "$REPO_PATH"
-else
-    log "updating box..."
-    cd "$REPO_PATH"
-    git pull
-fi
-
+REPO_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$REPO_PATH"
 ./install.sh
