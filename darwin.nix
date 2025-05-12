@@ -25,7 +25,7 @@
     };
 
     # input sources
-    .GlobalPreferences = {
+    ".GlobalPreferences" = {
       "com.apple.keyboardlayout.all" = [ "ru" "en" ];
     };
 
