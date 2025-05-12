@@ -13,7 +13,7 @@ log() {
 REPO_PATH="$HOME/.config/nixpkgs"
 if [[ ! -d "$REPO_PATH" ]]; then
     log "cloning box..."
-    git clone https://github.com/bikmaev/box.git "$REPO_PATH"
+    git clone https://github.com/realbikmaev/box.git/ "$REPO_PATH"
 else
     log "updating box..."
     cd "$REPO_PATH"

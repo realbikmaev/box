@@ -18,7 +18,7 @@
 
   programs.git = {
     enable = true;
-    userName = "bikmaev";
+    userName = "realbikmaev";
     extraConfig = {
       init.defaultBranch = "main";
       pull.rebase = true;
