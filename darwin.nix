@@ -9,31 +9,45 @@
     nonUS.remapTilde = false;
   };
 
-  system.defaults = {
-    # function keys behavior
-    NSGlobalDomain = {
-      "com.apple.keyboard.fnState" = true; # make F keys be F keys
-      "com.apple.keyboardlayout.all" = [ "ru" "en" ];
-      AppleKeyboardUIMode = 3;
-      InitialKeyRepeat = 15;
-      KeyRepeat = 2;
-      NSAutomaticCapitalizationEnabled = false;
-      NSAutomaticSpellingCorrectionEnabled = false;
-      NSAutomaticPeriodSubstitutionEnabled = false;
-      NSAutomaticQuoteSubstitutionEnabled = false;
-      NSAutomaticDashSubstitutionEnabled = false;
-      ApplePressAndHoldEnabled = false;
-    };
+  # input sources
+  system.defaults.NSGlobalDomain = {
+    "com.apple.keyboard.fnState" = true; # make F keys be F keys
+    AppleKeyboardUIMode = 3;
+    InitialKeyRepeat = 15;
+    KeyRepeat = 2;
+    NSAutomaticCapitalizationEnabled = false;
+    NSAutomaticSpellingCorrectionEnabled = false;
+    NSAutomaticPeriodSubstitutionEnabled = false;
+    NSAutomaticQuoteSubstitutionEnabled = false;
+    NSAutomaticDashSubstitutionEnabled = false;
+    ApplePressAndHoldEnabled = false;
+  };
 
-    dock = {
-      autohide = true;
-      show-recents = false;
-    };
+  # input method
+  system.keyboard.userKeyMapping = [
+    {
+      HIDKeyboardModifierMappingSrc = 30064771129;
+      HIDKeyboardModifierMappingDst = 30064771296;
+    }
+  ];
 
-    finder = {
-      AppleShowAllExtensions = true;
-      _FXShowPosixPathInTitle = true;
-    };
+  system.inputMethod = {
+    enabled = "com.apple.keylayout.ABC";
+    enabledInputSources = [
+      { InputSourceKind = "Keyboard Layout"; "KeyboardLayout ID" = 252; }  # ABC
+      { InputSourceKind = "Keyboard Layout"; "KeyboardLayout ID" = 0; }    # US
+      { InputSourceKind = "Keyboard Layout"; "KeyboardLayout ID" = 19; }   # Russian
+    ];
+  };
+
+  system.defaults.dock = {
+    autohide = true;
+    show-recents = false;
+  };
+
+  system.defaults.finder = {
+    AppleShowAllExtensions = true;
+    _FXShowPosixPathInTitle = true;
   };
 
   # homebrew minimal
