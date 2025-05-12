@@ -17,10 +17,10 @@ fi
 if [ "$(uname)" == "Darwin" ]; then
     if ! command -v darwin-rebuild &>/dev/null; then
         echo "==> installing nix-darwin..."
-        nix run nix-darwin -- switch --flake "$REPO_PATH"
+        nix run nix-darwin -- switch --flake "$REPO_PATH#bikmaev-mac"
     fi
     echo "==> applying darwin config..."
-    darwin-rebuild switch --flake "$REPO_PATH"
+    darwin-rebuild switch --flake "$REPO_PATH#bikmaev-mac"
 else
     echo "==> setting up ubuntu with nix..."
     export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}
