@@ -12,12 +12,6 @@
   system.defaults.NSGlobalDomain = {
     # keyboard
     "com.apple.keyboard.fnState" = true;
-    "com.apple.keyboard.modifiermapping.1452-630-0" = [
-      {
-        HIDKeyboardModifierMappingSrc = 30064771129;
-        HIDKeyboardModifierMappingDst = 30064771296;
-      }
-    ];
     AppleKeyboardUIMode = 3;
     InitialKeyRepeat = 15;
     KeyRepeat = 2;
